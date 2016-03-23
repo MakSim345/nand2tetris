@@ -1,0 +1,57 @@
+Start with building the Not gate.
+
+Open the
+
+projects/01/Not.hdl
+For the // put your parts here use
+
+Nand(a=in,b=in,out=out);
+Then run
+
+./HardwareSimulator.sh ../Projects/01/Not.tst
+The tests should pass. Or alternatively open the HS and load Not.hdl and Not.tst from the GUI.
+
+Not much spoiler to give you the recipe of Not gate. Basically you used the Nand gate and wired the input to both of the input pins of the Nand gate. And wired the output of the Nand gate to the output of Not gate. This created the Not truth table with the inputs to the Nand gate.
+
+Then build the And and Or gates from Nand gates. Basically you need to figure out how to wire the gates together to give you the desired logical truth table output.
+
+For And gate you are going to have something like
+
+Nand(a=...,b=...,out=...);
+Nand(a=...,b=...,out=out);
+The whole point is to wire this things so it gives you the correct output.
+
+So start by making Not, And and Or gate using only Nand chips.
+
+Then move to more complex ones. Look at the Project video where the order is explained and some tips.
+ 4 Upvote
+ · 
+Reply
+
+FN
+Filipe Nicoli · 11 days ago · Edited
+As Alen said, you start only with Nand gates and you need to build the other gates. You can reuse work you've already done to implement the new gates. You can take a look at the Apendix A for more information on the language.
+
+It would help a lot if you would take the .cmp files and take a look at the expected output, along with the gate description. You can try to draw the actual gates you have already implemented. Again, as Alen said, start with Not, And and Or. All three can be built from Nand gates only. For the OR gate, go back if you need and be sure to understand DeMorgan's statement.
+ 0 Upvote
+ · 
+Reply
+
+
+Virginia Benton Morris · 10 days ago
+I think it's also worth doing to try to do the truth tables yourself rather than just looking at the compare files. And I'm still struggling with DeMorgan - looks nice and obvious until I try to apply it to a nasty expression :(
+ 0 Upvote
+ · 
+Reply
+
+
+Saul C. Oparaocha O'Sullivan · 6 days ago
+Thanks
+ 0 Upvote
+ · 
+Reply
+
+
+Saul C. Oparaocha O'Sullivan · 6 days ago
+Thanks
+
