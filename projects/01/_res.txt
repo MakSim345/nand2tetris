@@ -1,0 +1,20 @@
+And.hdl - OK.
+And16.hdl - OK.
+
+DMux.hdl - OK.
+DMux4Way.hdl - OK.
+DMux8Way.hdl - OK.
+
+Mux.hdl - OK.
+Mux16.hdl - OK.
+Mux4Way16.hdl - OK.
+Mux8Way16.hdl - OK.
+
+Not.hdl - OK.
+Not16.hdl - OK.
+
+Or.hdl - OK.
+Or16.hdl - OK.
+Or8Way.hdl - OK.
+
+Xor.hdl - OK.
