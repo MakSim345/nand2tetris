@@ -8,6 +8,8 @@
 #sublime files:
 stino.settings
 
+#Nand 2 tetris:
+*.out
 
 # VIM/GVIM session files
 *.vim
