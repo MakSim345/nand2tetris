@@ -1,11 +1,11 @@
-//; This file is part of www.nand2tetris.org
-//; and the book "The Elements of Computing Systems"
-//; by Nisan and Schocken, MIT Press.
-//; File name: projects/06/rect/Rect.asm
-
-//; Draws a rectangle at the top-left corner of the screen.
-//; The rectangle is 16 pixels wide and R0 pixels high.
+//; BLack whole screen
+//; 
    
+   @8192     //; move number to accumulator
+   D=A      //; save number to DATA register
+   @R0      //; select address of R0
+   M=D      //; store to a value from DATA register to R0
+
    @R0 //; select R0, first data MEMORY cell
    D=M //; save value from R0 to DATA register
 
@@ -29,7 +29,7 @@
    @address //; select variable "address" (SCREEN)
    D=M      //; save value of "address" to DATA register
 
-   @32      //; move number 32 to accumulator
+   @1       //; move number 32 to accumulator
    D=D+A    //; add 32 to DATA register and save to DATA register 
 
    @address //; select address of variable "address" (SCREEN)
