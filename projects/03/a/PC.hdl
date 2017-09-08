@@ -1,8 +1,3 @@
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/03/a/PC.hdl
-
 /**
  * A 16-bit counter with load and reset control bits.
  * if      (reset[t] == 1) out[t+1] = 0
@@ -11,10 +6,80 @@
  * else                    out[t+1] = out[t]
  */
 
-CHIP PC {
-    IN in[16],load,inc,reset;
+
+CHIP PC
+{
+    IN  in[16], load, inc, reset;
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+
+    //Load MUX:
+    Mux16(a=incMuxOut, b=in, sel=load, out=loadMuxOut);
+    //Reset MUX
+	Mux16(a=loadMuxOut, b=false, sel=reset, out=resetMuxOut);
+    //Register 
+    Register(in=resetMuxOut, load=true, out=out, out=regOut);
+    //Incrementer
+    Inc16(in=regOut, out=inc16Out);
+    //Increment MUX
+    Mux16(a=regOut, b=inc16Out, sel=inc, out=incMuxOut);
+
 }
+
+/*
+CHIP PC
+{
+    //test - just increment:
+    IN  in[16], load, inc, reset;
+    OUT out[16];
+
+    PARTS:
+	Inc16(in=regout, out=add1);
+
+    Mux16(a=in, b=add1, sel=inc, out=addOrIn);
+
+    Register(in=addOrIn, load=true, out=regout, out=out);
+
+}
+*/
+
+/*
+CHIP PC
+{
+    IN  in[16], load, inc, reset;
+    OUT out[16];
+
+    PARTS:
+    Inc16(in = feedback, out=incfeedback);
+    Mux8Way16(sel[0] = inc, sel[1] = load,
+                            sel[2] = reset,
+                            a = feedback,
+                            b = incfeedback,
+                            c = in,
+                            d = in,
+                            e = false,
+                            f = false,
+                            g = false,
+                            h = false,
+                            out = procfeedback);
+    Register(in=procfeedback, load=true, out=out, out=feedback);
+}
+*/
+
+/**
+CHIP PC {
+    IN  in[16], load, inc, reset;
+    OUT out[16];
+
+    PARTS:
+	Inc16(in=regout, out=plusone);
+	Mux16(a=false, b=plusone, sel=inc, out=incout);
+	Mux16(a=incout, b=in, sel=load, out=loadout);
+	Mux16(a=loadout, b=false, sel=reset, out=toload);
+	Or(a=load, b=reset, out=loadorreset);
+	Or(a=loadorreset, b=inc, out=loadflag);
+    Register(in=toload, load=loadflag, out=regout);
+	Or16(a=regout, b=regout, out=out);
+}
+*/
