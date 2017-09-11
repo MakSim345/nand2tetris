@@ -17,14 +17,13 @@ CHIP PC
     //Load MUX:
     Mux16(a=incMuxOut, b=in, sel=load, out=loadMuxOut);
     //Reset MUX
-	Mux16(a=loadMuxOut, b=false, sel=reset, out=resetMuxOut);
+    Mux16(a=loadMuxOut, b=false, sel=reset, out=resetMuxOut);
     //Register 
     Register(in=resetMuxOut, load=true, out=out, out=regOut);
     //Incrementer
     Inc16(in=regOut, out=inc16Out);
     //Increment MUX
     Mux16(a=regOut, b=inc16Out, sel=inc, out=incMuxOut);
-
 }
 
 /*
