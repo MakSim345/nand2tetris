@@ -121,17 +121,40 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(210,320)" to="(210,380)"/>
     <wire from="(210,380)" to="(210,440)"/>
     <wire from="(210,260)" to="(210,320)"/>
+    <comp lib="0" loc="(580,190)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp lib="6" loc="(771,39)" name="Text">
+      <a name="text" val="ReadMe:"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(70,320)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="INVERT"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
     <comp lib="1" loc="(400,420)" name="XOR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="1" loc="(400,360)" name="XOR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="1" loc="(400,180)" name="XOR Gate">
       <a name="inputs" val="2"/>
     </comp>
     <comp lib="0" loc="(170,180)" name="Splitter">
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
     </comp>
+    <comp lib="1" loc="(400,120)" name="XOR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
     <comp lib="1" loc="(400,240)" name="XOR Gate">
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="1" loc="(400,480)" name="XOR Gate">
+    <comp lib="1" loc="(400,300)" name="XOR Gate">
       <a name="inputs" val="2"/>
     </comp>
     <comp lib="0" loc="(650,190)" name="Pin">
@@ -140,34 +163,19 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="8"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="1" loc="(400,300)" name="XOR Gate">
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="0" loc="(70,320)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="INVERT"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="1" loc="(400,360)" name="XOR Gate">
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="1" loc="(400,540)" name="XOR Gate">
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="0" loc="(580,190)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-    </comp>
     <comp lib="0" loc="(100,260)" name="Pin">
       <a name="width" val="8"/>
       <a name="tristate" val="false"/>
     </comp>
-    <comp lib="1" loc="(400,120)" name="XOR Gate">
+    <comp lib="1" loc="(400,540)" name="XOR Gate">
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="1" loc="(400,180)" name="XOR Gate">
+    <comp lib="1" loc="(400,480)" name="XOR Gate">
       <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="6" loc="(894,59)" name="Text">
+      <a name="text" val=" Invertor made from XOR logic gates, with a selector."/>
+      <a name="font" val="SansSerif bold 12"/>
     </comp>
   </circuit>
 </project>
