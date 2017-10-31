@@ -7,10 +7,10 @@ Inc16.hdl
 [OK]
 PC.hdl
 
-[TODO]
+[OK]
 RAM64.hdl
 
-[TODO]
+[OK]
 RAM8.hdl
 
 [OK]

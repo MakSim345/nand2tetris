@@ -1,15 +1,9 @@
 [OK]
-Add16.hdl
-
-[TODO]
-ALU.hdl
+RAM4K.hdl
 
 [OK]
-FullAdder.hdl
+RAM16K.hdl
 
 [OK]
-HalfAdder.hdl
-
-[TODO]
-Inc16.hdl
+RAM512.hdl
 
